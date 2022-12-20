@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/hackerStyles.css') }}>
+    <title>PythonHackers</title>
+
+    </style>
+  </head>
+
+  <body class="backgroundtest">
+    {% if session %} 
+    <nav>
+      <button class="dashboard"><a href="/logout">Logout</a></button>
+      <button class="dashboard"><a href="/profile">Profile</a></button>
+      {% if session.userinfo.email == "josebrouwer1@gmail.com" or session.userinfo.email == "yassarrich@gmail.com" or session.userinfo.email == "chashimahiulislam@gmail.com"%}
+      <button class="dashboard"><a href="/adminView">Admin View</a></button>
+      <div><pre>{{pretty}}</pre></div>
+      {% endif %}
+    </nav>
+     
+    {% for item in sub %}
+    <div class="flex-container">
+      <p>
+          <a href={{item.urlLink}}><div class="item">{{item.title}}</div></a>
+      </p>
+      <p>
+          <a href="{{ url_for('like', art_title=item.title, art_id=item.id, action='like') }}"><div class="like">Like {{item.likes}}</div></a>
+      </p>
+      <p>
+          <a href="{{ url_for('like', art_title=item.title, art_id=item.id, action='dislike') }}"><div class="dislike">Dislike</div></a>
+      </p>
+    </div>
+    {% endfor %}
+    
+    <p style="color:black">{{PAGE + 1}}</p>
+  
+    <a class="dashboard" href="/back">Previous</a>
+    <a class="dashboard" href="/next">Next</a>
+    
+
+  {% else %}
+    <h1>Welcome Guest</h1>
+    <p><a href="/login">Login</a></p>
+
+  {% endif %}
+  
+  </body>
+</html>
