@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS articles;
+
+CREATE TABLE users (
+	nickname TEXT PRIMARY KEY NOT NULL, 
+	name TEXT NOT NULL
+);
+
+CREATE TABLE articles (
+	nickname TEXT NOT NULL, 
+	name TEXT NOT NULL, 
+	artTitle TEXT NOT NULL, 
+	artId INTEGER NOT NULL, 
+	artVal INTEGER NOT NULL
+);
+
