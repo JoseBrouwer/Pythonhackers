@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/hackerStyles.css') }}>
+    <title>Admin View</title>
+</head>
+<body class="backgroundtest">
+    <nav>
+        <button class="dashboard"><a href="/logout" style="color:black">Logout</a></button>
+        <button class="dashboard"><a href="/" style="color:black">Home</a></button>
+        <button class="dashboard"><a href="/profile" style="color:black">Profile</a></button>
+    </nav>
+    {% for item in articles %}
+    <div class="flex-container">
+      <div class="item">
+        <p>TITLE: {{item[2]}} | USER: {{item[1]}} </p>
+      </div>
+        <p>
+          <a href="{{ url_for('delete', title=item[2], user=item[1]) }}"><div class="dislike">Delete</div></a>
+        </p>
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
