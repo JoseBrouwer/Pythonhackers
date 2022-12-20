@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/hackerStyles.css') }}>
+    <title>Profile</title>
+</head>
+<body style="background-color:rgb(114, 199, 255)">
+    <nav>
+        <button class="dashboard"><a href="/logout" style="color:black">Logout</a></button>
+        <button class="dashboard"><a href="/" style="color:black">Home</a></button>
+        {% if session.userinfo.email == "josebrouwer1@gmail.com" or session.userinfo.email == "yassarrich@gmail.com" or session.userinfo.email == "chashimahiulislam@gmail.com"%}
+        <button class="dashboard"><a href="/adminView" style="color:black">Admin View</a></button>
+        {% endif %}
+      </nav>
+    <h1>Name: {{session.userinfo.name}}</h1>
+    <h1>Email: {{session.userinfo.email}}</h1>
+    <h2>Liked Post</h2>
+</body>
+</html>
