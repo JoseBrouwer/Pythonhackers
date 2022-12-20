@@ -1,0 +1,110 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+
+}
+img {  
+    max-width: 100%;  
+    height: auto;
+    border:solid;
+    border-color: rgb(0, 0, 0);
+    border-width:3px;
+    }  
+
+.btn{
+    border:none;
+    outline:none;
+    background: #888;
+    padding: 10px 30px;
+    font-size: 20px;
+    color:  #ddd;
+    cursor: pointer;
+    margin: 10px auto
+
+}
+
+.item {
+    flex-grow: 4;
+    align-self: center;
+    background: white;
+    height: 25px;
+    width: 600px;
+
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(0, 0, 0);
+
+    font-weight: bold;
+    padding: 25px;
+
+}
+
+.like {
+    align-self: center;
+    flex-grow: 4;
+    background: rgb(255, 92, 92);
+    height: 5px;
+    width: 600px;
+
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(0, 0, 0);
+
+    font-weight: bold;
+    padding: 25px;
+
+    cursor:pointer;
+    transition: opacity 0.15s;
+
+}
+.like:hover {
+    opacity: 0.8;
+}
+.like:active {
+    opacity: 0.6;
+}
+
+.dislike {
+    align-self: center;
+    flex-grow: 4;
+    background: rgb(131, 131, 131);
+    height: 5px;
+    width: 600px;
+
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(0, 0, 0);
+
+    font-weight: bold;
+    padding: 25px;
+
+    cursor: pointer;
+    transition: opacity 0.15s;
+
+}
+.dislike:hover {
+    opacity: 0.8;
+}
+
+.dislike:active {
+    opacity: 0.6;
+}
+
+.dashboard {
+    background-color: rgb(255, 92, 92);
+    color:black;
+    border:solid;
+    border-color:rgb(0, 0, 0);
+    border-width: 3px;
+    font-weight: bold;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow:rgb(0, 0, 0);
+}
+.backgroundtest{
+    background-color:rgb(114, 199, 255);
+}
